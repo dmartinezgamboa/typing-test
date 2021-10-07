@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+.typing-test {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.title {
+  display: flex;
+  width: 75%;
+  color: blue;
+}
+
+.timer {
+  display: flex;
+  width: 25%;
+}
+
+.test-text {
+  font-family: "Times New Roman", Times, serif;
+}
