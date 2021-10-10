@@ -50,4 +50,3 @@ function victory() {
   console.log("victory!");
   reset();
 }
-ad;
