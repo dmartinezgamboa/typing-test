@@ -1,11 +1,12 @@
-## requires the following:
+## Requirements:
 
-npm, node
+node.js (mac users use brew install for easy install of latest version)
 
-## run the following command
+## Navigate to repo root
 
-npm install
+typing-test/
 
-## to run dev script and keep index.html auto updating
+## Run the following commands:
 
-npm run dev
+~ npm install // installs all necessary node modules
+~ open index.html
