@@ -6,7 +6,12 @@ node.js (mac users use brew install for easy install of latest version)
 
 typing-test/
 
-## Run the following commands:
+## install node modules
 
-~ npm install // installs all necessary node modules
+~ npm install
+
+## open app
+
 ~ open index.html
+
+
