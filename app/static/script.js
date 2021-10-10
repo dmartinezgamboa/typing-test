@@ -48,4 +48,6 @@ function reset() {
 
 function victory() {
   console.log("victory!");
+  reset();
 }
+ad;
