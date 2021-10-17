@@ -16,7 +16,7 @@ function onUserKey() {
 
   if (inputBox.value == testSentenceArray[currentIndex]) {
     currentIndex++;
-    currentInput = "";
+    // currentInput = "";
     inputBox.value = "";
     if (currentIndex == testSentenceArray.length) {
       log();
