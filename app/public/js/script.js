@@ -14,7 +14,7 @@ var currentIndex = 0;
 var refreshIntervalID;
 var totalTime = 3000;
 
-testSentenceArray = ["The ", "dog ", "jumped ", "over ", "the ", "moon."];
+const testSentenceArray = ["The ", "dog ", "jumped ", "over ", "the ", "moon."];
 
 function onUserKey() {
   currentInput = inputBox.value;
