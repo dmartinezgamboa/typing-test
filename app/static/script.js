@@ -2,6 +2,9 @@ const timer = document.querySelector(".timer");
 const prompt = document.querySelector(".prompt");
 const inputBox = document.querySelector("input");
 const startButton = document.querySelector(".start-button");
+const txtgen = require('txtgen');
+const sentence = txtgen.sentence();
+alert(sentence);
 
 inputBox.addEventListener("input", onUserKey);
 startButton.addEventListener("click", reset); // refresh state to default
@@ -16,7 +19,6 @@ function onUserKey() {
 
   if (inputBox.value == testSentenceArray[currentIndex]) {
     currentIndex++;
-    currentInput = "";
     inputBox.value = "";
     if (currentIndex == testSentenceArray.length) {
       log();
