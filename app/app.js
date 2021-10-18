@@ -1,20 +1,19 @@
-const txtgen = require('txtgen');
-const sentence = txtgen.sentence();
+const express = require("express");
+const path = require("path");
 
+const app = express();
 
-function sayHello(name){
-    console.log('Hello' + name);
-}
+const PORT = 3000;
 
-console.log(sentence);
+// // Serve js files
+app.use("/js", express.static(path.join(__dirname, "public/js/")));
+// // Serve css files
+app.use("/css", express.static(path.join(__dirname, "public/css/")));
 
-sayHello('Mosh');
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/html/index.html"));
+});
 
-
-// setTimeout();
-// clearTimeout();
-// setInterval();
-// clearInterval();
-
-
-//global.console.log("hello");
+app.listen(PORT, () => {
+  console.log(`Listening on http://localhost:${PORT}/`);
+});
