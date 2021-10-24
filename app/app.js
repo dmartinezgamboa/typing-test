@@ -5,9 +5,8 @@ const app = express();
 
 const PORT = 3000;
 
-// // Serve js files
+// // Serve static files
 app.use("/js", express.static(path.join(__dirname, "public/js/")));
-// // Serve css files
 app.use("/css", express.static(path.join(__dirname, "public/css/")));
 
 app.get("/", (req, res) => {

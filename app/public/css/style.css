@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+
+.current-word {
+  color: blue;
+}
+
 .typing-test {
   display: flex;
   flex-direction: column;
