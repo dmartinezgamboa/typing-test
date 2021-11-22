@@ -2,14 +2,12 @@ const timer = document.querySelector(".timer");
 const prompt = document.querySelector(".prompt");
 const inputBox = document.querySelector("input");
 const startButton = document.querySelector(".start-button");
-// const txtgen = require("txtgen");
-// const sentence = txtgen.sentence();
-// alert(sentence);
+const sentence = document.getElementById("test-sentence");
 
-inputBox.addEventListener("input", onUserKey); // run procedures each time key is entered into box
-startButton.addEventListener("click", startTimer); // refresh state to default
+inputBox.addEventListener("input", onUserKey);
+startButton.addEventListener("click", startTimer);
 
-var currentInput = ""; // user state variables
+var currentInput = "";
 var currentIndex = 0;
 var refreshIntervalID;
 var totalTime = 90000;
@@ -24,8 +22,9 @@ function onUserKey() {
   }
 
   if (inputBox.value == testSentenceArray[currentIndex]) {
+    removeHighlight(sentence.childNodes[currentIndex]);
     currentIndex++;
-    // currentInput = "";
+    addHighlight(sentence.childNodes[currentIndex]);
     inputBox.value = "";
     if (currentIndex == testSentenceArray.length) {
       log();
@@ -66,9 +65,34 @@ function victory() {
   reset();
 }
 
+function updateSentence() {
+  sentence.innerText = "";
+
+  for (let i = 0; i < testSentenceArray.length; i++) {
+    let word = document.createElement("span");
+    word.innerText = testSentenceArray[i];
+    sentence.appendChild(word);
+  }
+
+  sentence.firstChild.className = "current-word";
+}
+
+function removeHighlight(child) {
+  child.classList.remove("current-word");
+}
+
+function addHighlight(child) {
+  try {
+    child.className = "current-word";
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 function startTimer() {
   reset();
   testStarted = true;
+  updateSentence();
   refreshIntervalID = setInterval(printTime, 1000);
 
   function printTime() {
