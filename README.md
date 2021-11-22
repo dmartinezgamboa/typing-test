@@ -6,12 +6,10 @@ node.js (mac users use brew install for easy install of latest version)
 
 typing-test/
 
-## install node modules
-
-~ npm install
-
 ## open app
 
-~ open index.html
+~ node app/app.js
 
+## Navigate to localhost in browser (3000 by default)
 
+http://localhost:3000/
